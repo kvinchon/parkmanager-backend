@@ -2,7 +2,7 @@
   "name": "parkmanager-backend",
   "version": "1.0.0",
   "description": "This repository is exclusively reserved for Blacksmith's back test, carried out with a purely pedagogical aim.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js"
