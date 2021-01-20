@@ -9,9 +9,6 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.STRING,
       allowNull: false,
     },
-    available: {
-      type: Sequelize.BOOLEAN,
-    },
     occupationTime: {
       type: Sequelize.INTEGER,
       allowNull: false,
