@@ -24,7 +24,7 @@ module.exports = (app) => {
    *            number:
    *              type: integer
    *            floor:
-   *              type: integer
+   *              type: string
    *            available:
    *              type: boolean
    *            occupationTime:
@@ -165,7 +165,7 @@ module.exports = (app) => {
    *          number:
    *            type: integer
    *          floor:
-   *            type: integer
+   *            type: string
    *          available:
    *            type: boolean
    *          occupationTime:

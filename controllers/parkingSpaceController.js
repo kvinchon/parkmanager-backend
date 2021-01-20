@@ -22,6 +22,9 @@ exports.create = async (req, res) => {
   const parkingSpace = {
     number: req.body.number,
     floor: req.body.floor,
+    available: req.body.available,
+    occupationTime: req.body.occupationTime,
+    userId: req.body.userId,
   };
 
   // Save ParkingSpace in the database
@@ -80,7 +83,7 @@ exports.findOneByFloor = (req, res) => {
   ParkingSpace.findOne({
     where: {
       floor: floor,
-      available: true,
+      userId: null,
     },
   })
     .then((data) => {

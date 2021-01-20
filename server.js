@@ -16,8 +16,24 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const db = require("./models");
+const Role = db.Role;
 
-db.sequelize.sync();
+function setRoles() {
+  Role.create({
+    id: 1,
+    name: "public",
+  });
+
+  Role.create({
+    id: 2,
+    name: "admin",
+  });
+}
+
+db.sequelize.sync({ force: true }).then(() => {
+  console.log("Drop and resync database...");
+  setRoles();
+});
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));

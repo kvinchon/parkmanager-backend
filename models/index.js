@@ -5,12 +5,6 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   host: dbConfig.HOST,
   dialect: dbConfig.dialect,
   operatorsAliases: 0,
-  dialectOptions: {
-    ssl: {
-      require: true,
-      rejectUnauthorized: false,
-    },
-  },
 
   pool: {
     max: dbConfig.pool.max,
@@ -28,6 +22,8 @@ db.sequelize = sequelize;
 db.User = require("./User.js")(sequelize, Sequelize);
 db.Role = require("./Role.js")(sequelize, Sequelize);
 db.ParkingSpace = require("./ParkingSpace.js")(sequelize, Sequelize);
+
+db.ParkingSpace.belongsTo(db.User);
 
 db.Role.belongsToMany(db.User, {
   through: "user_roles",
