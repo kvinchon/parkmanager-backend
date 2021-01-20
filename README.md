@@ -34,6 +34,13 @@ Start the server by running the following command. By default, the server runs o
 $ npm run dev
 ```
 
+## API Authentication & Authorization
+In order to access protected resources, you will need an access token, retrieved when the user logs in.
+To access the protected resources, make sure you have the required role and add the following line in the request headers:
+```
+x-access-token: my-access-token
+```
+
 ## API Documentation
 Documentation for the latest Current release is available at <http://localhost:8000/api/documentation>.
 
